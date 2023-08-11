@@ -34,12 +34,14 @@ const fetchImages = async searchQuery => {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
+      gallery.innerHTML = '';
+      loadMoreButton.style.display = 'none';
       return;
     }
 
-    if (currentPage === 1) {
-      gallery.innerHTML = '';
-    }
+    // if (currentPage === 1) {
+    //   gallery.innerHTML = '';
+    // }
 
     images.forEach(image => {
       const card = document.createElement('div');
